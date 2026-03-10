@@ -1,4 +1,4 @@
-import { motion } from "framer-motion";
+import { motion, type Easing } from "framer-motion";
 import { Compass, HardHat, FileText, PenTool, Building, Shield, ClipboardList, Search, FileCheck } from "lucide-react";
 import Layout from "@/components/Layout";
 
