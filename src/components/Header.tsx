@@ -37,7 +37,7 @@ const Header = () => {
             </Link>
           ))}
           <a
-            href="tel:+48000000000"
+            href="tel:+48668258364"
             className="flex items-center gap-2 text-sm font-medium text-foreground bg-primary text-primary-foreground px-4 py-2 rounded-sm hover:bg-foreground/90 transition-colors"
           >
             <Phone className="w-3.5 h-3.5" />

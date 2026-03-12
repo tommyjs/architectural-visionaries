@@ -4,9 +4,9 @@ import Layout from "@/components/Layout";
 import bannerImg from "@/assets/banner-kontakt.jpg";
 
 const contactInfo = [
-  { icon: Phone, label: "Telefon", value: "+48 000 000 000", href: "tel:+48000000000" },
-  { icon: Mail, label: "E-mail", value: "kontakt@projektybudowy.pl", href: "mailto:kontakt@projektybudowy.pl" },
-  { icon: MapPin, label: "Lokalizacja", value: "Polska" },
+  { icon: Phone, label: "Telefon", value: "+48 668 258 364", href: "tel:+48668258364" },
+  { icon: Mail, label: "E-mail", value: "projektybudowy@gmail.com", href: "mailto:projektybudowy@gmail.com" },
+  { icon: MapPin, label: "Lokalizacja", value: "Babice 104, 95-083 Lutomiersk, woj. łódzkie" },
   { icon: Clock, label: "Godziny pracy", value: "Pon–Pt: 8:00–16:00" },
 ];
 
@@ -119,7 +119,7 @@ const Kontakt = () => {
                   <input
                     type="tel"
                     className="w-full px-4 py-3 bg-background border border-border rounded-sm text-foreground font-body text-sm focus:outline-none focus:ring-1 focus:ring-foreground"
-                    placeholder="+48 000 000 000"
+                    placeholder="+48 668 258 364"
                   />
                 </div>
 
