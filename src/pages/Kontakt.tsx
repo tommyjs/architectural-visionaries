@@ -2,12 +2,30 @@ import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Layout from "@/components/Layout";
 import bannerImg from "@/assets/banner-kontakt.jpg";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table";
 
 const contactInfo = [
   { icon: Phone, label: "Telefon", value: "+48 668 258 364", href: "tel:+48668258364" },
   { icon: Mail, label: "E-mail", value: "projektybudowy@gmail.com", href: "mailto:projektybudowy@gmail.com" },
   { icon: MapPin, label: "Lokalizacja", value: "Babice 104, 95-083 Lutomiersk, woj. łódzkie" },
   { icon: Clock, label: "Godziny pracy", value: "Pon–Pt: 8:00–16:00" },
+];
+
+const hours = [
+  { day: "Poniedziałek", time: "8:00 – 16:00", open: true },
+  { day: "Wtorek", time: "8:00 – 16:00", open: true },
+  { day: "Środa", time: "8:00 – 16:00", open: true },
+  { day: "Czwartek", time: "8:00 – 16:00", open: true },
+  { day: "Piątek", time: "8:00 – 16:00", open: true },
+  { day: "Sobota", time: "9:00 – 13:00", open: true },
+  { day: "Niedziela", time: "Zamknięte", open: false },
 ];
 
 const Kontakt = () => {
@@ -72,77 +90,83 @@ const Kontakt = () => {
               </div>
             </motion.div>
 
-            {/* Contact form */}
+            {/* Google Maps */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.6, delay: 0.2 }}
             >
-              <form
-                className="space-y-6 bg-card border border-border p-8 rounded-sm"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  // placeholder
-                }}
-              >
-                <h3 className="text-xl font-heading font-semibold text-foreground mb-2">
-                  Wyślij wiadomość
-                </h3>
-
-                <div className="space-y-2">
-                  <label className="text-xs font-body font-semibold uppercase tracking-wider text-muted-foreground">
-                    Imię i nazwisko
-                  </label>
-                  <input
-                    type="text"
-                    className="w-full px-4 py-3 bg-background border border-border rounded-sm text-foreground font-body text-sm focus:outline-none focus:ring-1 focus:ring-foreground"
-                    placeholder="Jan Kowalski"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-xs font-body font-semibold uppercase tracking-wider text-muted-foreground">
-                    E-mail
-                  </label>
-                  <input
-                    type="email"
-                    className="w-full px-4 py-3 bg-background border border-border rounded-sm text-foreground font-body text-sm focus:outline-none focus:ring-1 focus:ring-foreground"
-                    placeholder="jan@example.com"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-xs font-body font-semibold uppercase tracking-wider text-muted-foreground">
-                    Telefon
-                  </label>
-                  <input
-                    type="tel"
-                    className="w-full px-4 py-3 bg-background border border-border rounded-sm text-foreground font-body text-sm focus:outline-none focus:ring-1 focus:ring-foreground"
-                    placeholder="+48 668 258 364"
-                  />
-                </div>
-
-                <div className="space-y-2">
-                  <label className="text-xs font-body font-semibold uppercase tracking-wider text-muted-foreground">
-                    Wiadomość
-                  </label>
-                  <textarea
-                    rows={5}
-                    className="w-full px-4 py-3 bg-background border border-border rounded-sm text-foreground font-body text-sm focus:outline-none focus:ring-1 focus:ring-foreground resize-none"
-                    placeholder="Opisz swoje potrzeby..."
-                  />
-                </div>
-
-                <button
-                  type="submit"
-                  className="w-full bg-primary text-primary-foreground py-3 text-sm font-body font-semibold uppercase tracking-wider hover:bg-foreground/90 transition-colors rounded-sm"
-                >
-                  Wyślij wiadomość
-                </button>
-              </form>
+              <div className="bg-card border border-border rounded-sm overflow-hidden h-full min-h-[400px]">
+                <iframe
+                  title="Lokalizacja firmy"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2472.5!2d19.39!3d51.75!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zBabice+104%2C+95-083+Lutomiersk!5e0!3m2!1spl!2spl!4v1"
+                  width="100%"
+                  height="100%"
+                  style={{ border: 0, minHeight: "400px" }}
+                  allowFullScreen
+                  loading="lazy"
+                  referrerPolicy="no-referrer-when-downgrade"
+                  className="w-full h-full"
+                />
+              </div>
             </motion.div>
           </div>
+        </div>
+      </section>
+
+      {/* Godziny dostępności */}
+      <section className="section-padding bg-secondary/30">
+        <div className="container-narrow max-w-2xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+          >
+            <div className="text-center mb-10">
+              <div className="line-decoration mx-auto mb-6" />
+              <h2 className="text-2xl md:text-3xl font-heading font-bold text-foreground mb-3">
+                Godziny dostępności
+              </h2>
+              <p className="text-muted-foreground font-body">
+                Poniżej znajdą Państwo godziny, w których jestem dostępny.
+              </p>
+            </div>
+
+            <div className="bg-card border border-border rounded-sm overflow-hidden">
+              <Table>
+                <TableHeader>
+                  <TableRow className="bg-foreground/5 hover:bg-foreground/5">
+                    <TableHead className="font-heading font-semibold text-foreground uppercase text-xs tracking-wider">
+                      Dzień
+                    </TableHead>
+                    <TableHead className="font-heading font-semibold text-foreground uppercase text-xs tracking-wider text-right">
+                      Godziny
+                    </TableHead>
+                  </TableRow>
+                </TableHeader>
+                <TableBody>
+                  {hours.map((h) => (
+                    <TableRow key={h.day}>
+                      <TableCell className="font-body font-medium text-foreground">
+                        {h.day}
+                      </TableCell>
+                      <TableCell
+                        className={`font-body text-right ${
+                          h.open
+                            ? "text-foreground"
+                            : "text-muted-foreground italic"
+                        }`}
+                      >
+                        {h.time}
+                      </TableCell>
+                    </TableRow>
+                  ))}
+                </TableBody>
+              </Table>
+            </div>
+          </motion.div>
         </div>
       </section>
     </Layout>
