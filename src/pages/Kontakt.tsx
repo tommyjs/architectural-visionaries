@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import Layout from "@/components/Layout";
+import bannerImg from "@/assets/banner-kontakt.jpg";
 
 const contactInfo = [
   { icon: Phone, label: "Telefon", value: "+48 000 000 000", href: "tel:+48000000000" },
