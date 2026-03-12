@@ -1,6 +1,7 @@
 import { motion, type Easing } from "framer-motion";
 import { Compass, HardHat, FileText, PenTool, Building, Shield, ClipboardList, Search, FileCheck } from "lucide-react";
 import Layout from "@/components/Layout";
+import bannerImg from "@/assets/banner-uslugi.jpg";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 30 },
