@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Award, Users, Building2, Shield } from "lucide-react";
 import Layout from "@/components/Layout";
 import aboutImg from "@/assets/about-img.jpg";
+import bannerImg from "@/assets/banner-ofirmie.jpg";
 
 const highlights = [
   { icon: Award, label: "Uprawnienia bez ograniczeń" },
