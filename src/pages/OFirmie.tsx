@@ -2,6 +2,7 @@ import { motion } from "framer-motion";
 import { Award, Users, Building2, Shield } from "lucide-react";
 import Layout from "@/components/Layout";
 import aboutImg from "@/assets/about-img.jpg";
+import bannerImg from "@/assets/banner-ofirmie.jpg";
 
 const highlights = [
   { icon: Award, label: "Uprawnienia bez ograniczeń" },
@@ -14,13 +15,15 @@ const OFirmie = () => {
   return (
     <Layout>
       {/* Header */}
-      <section className="section-padding bg-secondary">
-        <div className="container-narrow text-center">
-          <div className="line-decoration mx-auto mb-6" />
-          <h1 className="text-4xl md:text-5xl font-heading font-bold text-foreground mb-4">
+      <section className="relative h-[340px] md:h-[420px] flex items-center justify-center overflow-hidden">
+        <img src={bannerImg} alt="Inżynier przy pracy nad projektem budowlanym" className="absolute inset-0 w-full h-full object-cover" />
+        <div className="absolute inset-0 bg-foreground/60" />
+        <div className="relative z-10 container-narrow text-center">
+          <div className="line-decoration mx-auto mb-6 !bg-background/60" />
+          <h1 className="text-4xl md:text-5xl font-heading font-bold text-background mb-4">
             O Firmie
           </h1>
-          <p className="text-muted-foreground font-body max-w-xl mx-auto">
+          <p className="text-background/80 font-body max-w-xl mx-auto">
             Poznaj firmę Projekty Budowy — Adam Adrianowski.
           </p>
         </div>
